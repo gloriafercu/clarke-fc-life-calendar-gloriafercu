@@ -1,0 +1,17 @@
+.App-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.App-title {
+	font-family: 'Lobster', cursive;
+	font-size: 52px;
+	margin-right: 30px;
+}
+.pencil {
+	height: 60px;
+	margin-right: 20px;
+}
+.smile__header {
+	width: 60px;
+}

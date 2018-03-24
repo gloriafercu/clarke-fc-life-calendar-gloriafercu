@@ -9,14 +9,15 @@ class Editor extends React.Component{
 				<form className="editor__container">
 					<div className="date__container">
 						<label className="date__label">Fecha</label>
-						<input className="date" type="date" name="date" id="yourDatePicker"/>
+						<input className="date" type="date" name="date" id="yourDatePicker" />
 					</div>
 					<div className="status__container">
 						<legend>Estado</legend>
 						<label className="status__label" htmlFor="option1">:)</label>
-						<input className="status__happy" type="radio" id="option1" value=":)" name="options"/>
+						<input className="status__happy" type="radio" id="option1" value=":)" name="options" onChange = {this.props.selected}/>
 						<label className="status__label" htmlFor="option2">:(</label>
-						<input className="status__sad" type="radio" id="option2" value=":(" name="options" />
+						<input className="status__sad" type="radio" id="option2" value=":(" name="options"  onChange = {this.props.selected}/>
+
 					</div>
 					<div className="message__container">
 						<label className="message__label">Mensaje</label>

@@ -9,23 +9,19 @@ import {Route, Switch} from 'react-router-dom';
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleChange = this.handleChange.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 		this.state = {
 			entries: []
 		};
 	}
-	// document.getElementById("yourDatePicker").valueAsDate = new Date();
 
-
-	handleChange(e) {
-		const date = document.querySelector('input[name="date"]').value;
-		const option = document.querySelector('input[name="options"]:checked').value;
-		const message = document.querySelector('.message').value;
+	handleClick() {
+		const valueName = document.querySelector('.name').value;
+		const valueSurname = document.querySelector('.surname').value;
 
 		const entry = {
-			"date": date,
-			"option": option,
-			"message": message
+			"name": valueName,
+			"surname": valueSurname
 		};
 
 		if (localStorage.getItem('all entries') == null) {
@@ -53,7 +49,7 @@ class App extends React.Component {
 				</header>
 				<main className="wrapper">
 					<Switch>
-						<Route exact path='/' render={() => <Editor clicked={this.handleChange}/>}/>
+						<Route exact path='/' render={() => <Editor clicked={this.handleClick}/>}/>
 						<Route path='/calendar' render={() => <Calendar elements={this.state.entries}/>}/>
 					</Switch>
 				</main>

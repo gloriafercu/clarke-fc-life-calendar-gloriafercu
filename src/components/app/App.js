@@ -4,6 +4,7 @@ import Calendar from '../calendar/Calendar';
 import pencil from './../../images/pencil.svg';
 import face from './../../images/happy.svg';
 import './app.css';
+import {Route, Switch} from 'react-router-dom';
 
 class App extends React.Component {
 	constructor(props) {
@@ -38,23 +39,23 @@ class App extends React.Component {
 		});
 	}
 
-
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Life Calendar</h1>
-					<img className="pencil" src={pencil} alt="pencil" />
-					<img className="smile__header" src={face} alt="smile" />
-        </header>
+	render() {
+		return (
+			<div className="App">
+				<header className="App-header">
+					<h1 className="App-title">Life Calendar</h1>
+					<img className="pencil" src={pencil} alt="pencil"/>
+					<img className="smile__header" src={face} alt="smile"/>
+				</header>
 				<main className="wrapper">
-					<Editor clicked = { this.handleClick } />
-					<Calendar elements = { this.state.entries }/>
+					<Switch>
+						<Route exact path='/' render={() => <Editor clicked={this.handleClick}/>}/>
+						<Route path='/calendar' render={() => <Calendar elements={this.state.entries}/>}/>
+					</Switch>
 				</main>
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default App;

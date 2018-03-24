@@ -1,5 +1,6 @@
 import React from 'react';
 import './editor.css';
+import {Link} from 'react-router-dom';
 
 class Editor extends React.Component{
 	render() {
@@ -10,7 +11,9 @@ class Editor extends React.Component{
 					<input className="name" type="text" />
 					<label>Apellidos:</label>
 					<input className="surname" type="text" />
-					<button type="button" onClick = { this.props.clicked }>GUARDAR</button>
+					<Link className="link" to={'/calendar'}>
+						<button type="button" onClick = { this.props.clicked }>GUARDAR</button>
+					</Link>
 				</div>
 			</section>
 		);

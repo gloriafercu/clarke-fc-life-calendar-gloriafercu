@@ -1,5 +1,6 @@
 import React from 'react';
 import './calendar.css';
+import {Link} from 'react-router-dom';
 
 class Calendar extends React.Component {
 	render() {
@@ -12,6 +13,9 @@ class Calendar extends React.Component {
 							<li className="itemName" key={index}>{entry.name} {entry.surname}</li>
 						)}
 					</ul>
+					<Link className="link" to={'/'}>
+						<button type="button--back">Back</button>
+					</Link>
 				</div>
 			</section>
 		);

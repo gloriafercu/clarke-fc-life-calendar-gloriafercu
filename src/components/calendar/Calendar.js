@@ -8,12 +8,18 @@ class Calendar extends React.Component {
 			<section className="calendar">
 				<div className="localstorage__container">
 					<Link className="link" to={'/'}>
-						<button type="button--plus" onClick = {this.props.clicked}>+</button>
+						<button type="button" className="button--plus" onClick = {this.props.clicked}>+</button>
 					</Link>
 					<ul className="emoticon__list">
 						{this.props.elements.sort((a,b) => new Date(a.date) - new Date(b.date)).map((entry,index) =>
-							<li className="emoticon" key={index}>{entry.option} {entry.date} {entry.message}</li>
-						)}
+							<li key={index}>
+								<div className={`emoticon-${entry.option}`}></div>
+								<div className="content">
+									<h3 >{entry.date}</h3>
+									<p>{entry.message}</p>
+								</div>
+							</li>)
+						}
 					</ul>
 				</div>
 			</section>

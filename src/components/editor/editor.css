@@ -1,0 +1,110 @@
+.editor__container {
+	box-sizing: border-box;
+	position: absolute;
+	background-color: #fff;
+	max-width: 450px;
+	width: 90%;
+	padding: 35px;
+	margin: 0 auto;
+	top: 58%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
+}
+.date__container,
+.message__container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+.status__container {
+	margin-bottom: 30px;
+	text-align: center;
+
+}
+.legend {
+	text-align: left;
+}
+.date__label,
+.legend,
+.message__label {
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+.date,
+.message {
+	padding: 0px 10px;
+	border-radius: 5px;
+	border-style: none;
+	border: 2px solid #31b0e2;
+	height: 45px;
+
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+.buttons a {
+	width: 48%;
+}
+.button--save {
+	box-sizing: border-box;
+	background-color: #31b0e2;
+	color: #fff;
+	border: 2px solid #31b0e2;
+	padding: 0 10px;
+	border-radius: 5px;
+	width: 100%;
+	margin:0 10px 0 0;
+	height: 45px;
+	cursor: pointer;
+	outline: none;
+}
+.button--cancel {
+	box-sizing: border-box;
+	border: 2px solid #31b0e2;
+	color: #31b0e2;
+	padding: 0 10px;
+	width: 100%;
+	height: 45px;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+}
+.status__happy,
+.status__sad {
+	position: absolute;
+	opacity: 0;
+}
+.status__happy + label,
+.status__sad + label{
+	content:"";
+	position: relative;
+	display: inline-block;
+	width:  60px;
+	height: 60px;
+	background-size: cover;
+	margin:0 30px;
+}
+.status__happy + label{
+	background-image: url('./../../images/happy.svg');
+	transition: all .5s;
+}
+.status__sad + label {
+	background-image: url('./../../images/sad.svg');
+	transition: all .5s;
+}
+
+.status__happy:checked + label{
+	background-image: url('./../../images/happy.svg');
+	transform: scale(1.3);
+}
+.status__sad:checked + label {
+	background-image: url('./../../images/sad.svg');
+	transform: scale(1.3);
+}

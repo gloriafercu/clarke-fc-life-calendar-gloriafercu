@@ -1,4 +1,4 @@
-# Prueba técnica 2: Life calendar
+# Prueba técnica 3: Life calendar
 
 Creación de una pequeña webapp en React basada en __Life Calendar de Brigada Creativa__.
 
